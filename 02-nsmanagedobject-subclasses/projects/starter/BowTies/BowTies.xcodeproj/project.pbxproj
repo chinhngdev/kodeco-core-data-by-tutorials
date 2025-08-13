@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		342505E12E4A02820023B148 /* ColorAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342505E02E4A02820023B148 /* ColorAttributeTransformer.swift */; };
-		34EF7B442E4B340200142D8D /* BowTie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EF7B422E4B340200142D8D /* BowTie+CoreDataClass.swift */; };
-		34EF7B452E4B340200142D8D /* BowTie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EF7B432E4B340200142D8D /* BowTie+CoreDataProperties.swift */; };
 		FEC6D47822ECFEB0004D739C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC6D47722ECFEB0004D739C /* AppDelegate.swift */; };
 		FEC6D47A22ECFEB0004D739C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC6D47922ECFEB0004D739C /* SceneDelegate.swift */; };
 		FEC6D47C22ECFEB0004D739C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC6D47B22ECFEB0004D739C /* ViewController.swift */; };
@@ -22,8 +20,6 @@
 
 /* Begin PBXFileReference section */
 		342505E02E4A02820023B148 /* ColorAttributeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAttributeTransformer.swift; sourceTree = "<group>"; };
-		34EF7B422E4B340200142D8D /* BowTie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BowTie+CoreDataClass.swift"; path = "BowTies/CoreDataEntities/BowTie+CoreDataClass.swift"; sourceTree = "<group>"; };
-		34EF7B432E4B340200142D8D /* BowTie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BowTie+CoreDataProperties.swift"; path = "BowTies/CoreDataEntities/BowTie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FEC6D47422ECFEB0004D739C /* BowTies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowTies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC6D47722ECFEB0004D739C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEC6D47922ECFEB0004D739C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,8 +50,6 @@
 		FEC6D46B22ECFEB0004D739C = {
 			isa = PBXGroup;
 			children = (
-				34EF7B422E4B340200142D8D /* BowTie+CoreDataClass.swift */,
-				34EF7B432E4B340200142D8D /* BowTie+CoreDataProperties.swift */,
 				FEC6D47622ECFEB0004D739C /* BowTies */,
 				FEC6D47522ECFEB0004D739C /* Products */,
 			);
@@ -185,8 +179,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34EF7B442E4B340200142D8D /* BowTie+CoreDataClass.swift in Sources */,
-				34EF7B452E4B340200142D8D /* BowTie+CoreDataProperties.swift in Sources */,
 				FEC6D47C22ECFEB0004D739C /* ViewController.swift in Sources */,
 				FEC6D48222ECFEB0004D739C /* BowTies.xcdatamodeld in Sources */,
 				FEC6D47822ECFEB0004D739C /* AppDelegate.swift in Sources */,
