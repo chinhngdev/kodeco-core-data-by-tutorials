@@ -3,58 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
-
-/* Begin PBXBuildFile section */
-		FE0EF98322FF3B2700D0800D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EF98222FF3B2700D0800D /* AppDelegate.swift */; };
-		FE0EF98522FF3B2700D0800D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EF98422FF3B2700D0800D /* SceneDelegate.swift */; };
-		FE0EF98722FF3B2700D0800D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EF98622FF3B2700D0800D /* ViewController.swift */; };
-		FE0EF98A22FF3B2700D0800D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0EF98822FF3B2700D0800D /* Main.storyboard */; };
-		FE0EF98D22FF3B2700D0800D /* BubbleTeaFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE0EF98B22FF3B2700D0800D /* BubbleTeaFinder.xcdatamodeld */; };
-		FE0EF98F22FF3B2800D0800D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE0EF98E22FF3B2800D0800D /* Assets.xcassets */; };
-		FE0EF99222FF3B2800D0800D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0EF99022FF3B2800D0800D /* LaunchScreen.storyboard */; };
-		FEAFE5F423009EC10058378D /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE5EA23009EC10058378D /* Category+CoreDataClass.swift */; };
-		FEAFE5F523009EC10058378D /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE5EB23009EC10058378D /* Category+CoreDataProperties.swift */; };
-		FEAFE5F623009EC10058378D /* Venue+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE5EC23009EC10058378D /* Venue+CoreDataClass.swift */; };
-		FEAFE5F723009EC10058378D /* Venue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE5ED23009EC10058378D /* Venue+CoreDataProperties.swift */; };
-		FEAFE5F823009EC10058378D /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE5EE23009EC10058378D /* Location+CoreDataClass.swift */; };
-		FEAFE5F923009EC10058378D /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE5EF23009EC10058378D /* Location+CoreDataProperties.swift */; };
-		FEAFE5FA23009EC10058378D /* Stats+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE5F023009EC10058378D /* Stats+CoreDataClass.swift */; };
-		FEAFE5FB23009EC10058378D /* Stats+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE5F123009EC10058378D /* Stats+CoreDataProperties.swift */; };
-		FEAFE5FC23009EC10058378D /* PriceInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE5F223009EC10058378D /* PriceInfo+CoreDataClass.swift */; };
-		FEAFE5FD23009EC10058378D /* PriceInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE5F323009EC10058378D /* PriceInfo+CoreDataProperties.swift */; };
-		FEAFE6012300A03C0058378D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE6002300A03C0058378D /* CoreDataStack.swift */; };
-		FEAFE6032300A0660058378D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAFE6022300A0660058378D /* FilterViewController.swift */; };
-		FEAFE62823012AE10058378D /* attribution.txt in Resources */ = {isa = PBXBuildFile; fileRef = FEAFE62623012AE00058378D /* attribution.txt */; };
-		FEAFE62923012AE10058378D /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = FEAFE62723012AE00058378D /* seed.json */; };
-/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FE0EF97F22FF3B2700D0800D /* BubbleTeaFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleTeaFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE0EF98222FF3B2700D0800D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE0EF98422FF3B2700D0800D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE0EF98622FF3B2700D0800D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FE0EF98922FF3B2700D0800D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FE0EF98C22FF3B2700D0800D /* BubbleTeaFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BubbleTeaFinder.xcdatamodel; sourceTree = "<group>"; };
-		FE0EF98E22FF3B2800D0800D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FE0EF99122FF3B2800D0800D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FE0EF99322FF3B2800D0800D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEAFE5EA23009EC10058378D /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FEAFE5EB23009EC10058378D /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FEAFE5EC23009EC10058378D /* Venue+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Venue+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FEAFE5ED23009EC10058378D /* Venue+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Venue+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FEAFE5EE23009EC10058378D /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FEAFE5EF23009EC10058378D /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FEAFE5F023009EC10058378D /* Stats+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stats+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FEAFE5F123009EC10058378D /* Stats+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stats+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FEAFE5F223009EC10058378D /* PriceInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FEAFE5F323009EC10058378D /* PriceInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FEAFE6002300A03C0058378D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		FEAFE6022300A0660058378D /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		FEAFE62623012AE00058378D /* attribution.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = attribution.txt; sourceTree = "<group>"; };
-		FEAFE62723012AE00058378D /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		34EF7D142E4DDD8200142D8D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FE0EF97E22FF3B2700D0800D /* BubbleTeaFinder */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		34EF7CFC2E4DDD8200142D8D /* BubbleTeaFinder */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (34EF7D142E4DDD8200142D8D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = BubbleTeaFinder; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FE0EF97C22FF3B2700D0800D /* Frameworks */ = {
@@ -70,7 +38,7 @@
 		FE0EF97622FF3B2700D0800D = {
 			isa = PBXGroup;
 			children = (
-				FE0EF98122FF3B2700D0800D /* BubbleTeaFinder */,
+				34EF7CFC2E4DDD8200142D8D /* BubbleTeaFinder */,
 				FE0EF98022FF3B2700D0800D /* Products */,
 			);
 			indentWidth = 2;
@@ -83,43 +51,6 @@
 				FE0EF97F22FF3B2700D0800D /* BubbleTeaFinder.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		FE0EF98122FF3B2700D0800D /* BubbleTeaFinder */ = {
-			isa = PBXGroup;
-			children = (
-				FE0EF98222FF3B2700D0800D /* AppDelegate.swift */,
-				FE0EF98422FF3B2700D0800D /* SceneDelegate.swift */,
-				FE0EF98622FF3B2700D0800D /* ViewController.swift */,
-				FEAFE6022300A0660058378D /* FilterViewController.swift */,
-				FEAFE6002300A03C0058378D /* CoreDataStack.swift */,
-				FE0EF98E22FF3B2800D0800D /* Assets.xcassets */,
-				FE0EF98822FF3B2700D0800D /* Main.storyboard */,
-				FE0EF99022FF3B2800D0800D /* LaunchScreen.storyboard */,
-				FE0EF99322FF3B2800D0800D /* Info.plist */,
-				FEAFE62623012AE00058378D /* attribution.txt */,
-				FEAFE62723012AE00058378D /* seed.json */,
-				FE0EF98B22FF3B2700D0800D /* BubbleTeaFinder.xcdatamodeld */,
-				FEAFE5E923009E7B0058378D /* NSManagedObject */,
-			);
-			path = BubbleTeaFinder;
-			sourceTree = "<group>";
-		};
-		FEAFE5E923009E7B0058378D /* NSManagedObject */ = {
-			isa = PBXGroup;
-			children = (
-				FEAFE5EA23009EC10058378D /* Category+CoreDataClass.swift */,
-				FEAFE5EB23009EC10058378D /* Category+CoreDataProperties.swift */,
-				FEAFE5EC23009EC10058378D /* Venue+CoreDataClass.swift */,
-				FEAFE5ED23009EC10058378D /* Venue+CoreDataProperties.swift */,
-				FEAFE5EE23009EC10058378D /* Location+CoreDataClass.swift */,
-				FEAFE5EF23009EC10058378D /* Location+CoreDataProperties.swift */,
-				FEAFE5F023009EC10058378D /* Stats+CoreDataClass.swift */,
-				FEAFE5F123009EC10058378D /* Stats+CoreDataProperties.swift */,
-				FEAFE5F223009EC10058378D /* PriceInfo+CoreDataClass.swift */,
-				FEAFE5F323009EC10058378D /* PriceInfo+CoreDataProperties.swift */,
-			);
-			path = NSManagedObject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +68,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				34EF7CFC2E4DDD8200142D8D /* BubbleTeaFinder */,
 			);
 			name = BubbleTeaFinder;
 			productName = BubbleTeaFinder;
@@ -181,11 +115,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEAFE62923012AE10058378D /* seed.json in Resources */,
-				FE0EF99222FF3B2800D0800D /* LaunchScreen.storyboard in Resources */,
-				FE0EF98F22FF3B2800D0800D /* Assets.xcassets in Resources */,
-				FEAFE62823012AE10058378D /* attribution.txt in Resources */,
-				FE0EF98A22FF3B2700D0800D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,45 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEAFE6012300A03C0058378D /* CoreDataStack.swift in Sources */,
-				FEAFE5FC23009EC10058378D /* PriceInfo+CoreDataClass.swift in Sources */,
-				FE0EF98722FF3B2700D0800D /* ViewController.swift in Sources */,
-				FEAFE5F523009EC10058378D /* Category+CoreDataProperties.swift in Sources */,
-				FE0EF98322FF3B2700D0800D /* AppDelegate.swift in Sources */,
-				FEAFE5FB23009EC10058378D /* Stats+CoreDataProperties.swift in Sources */,
-				FEAFE5FA23009EC10058378D /* Stats+CoreDataClass.swift in Sources */,
-				FE0EF98D22FF3B2700D0800D /* BubbleTeaFinder.xcdatamodeld in Sources */,
-				FEAFE5F923009EC10058378D /* Location+CoreDataProperties.swift in Sources */,
-				FEAFE5F423009EC10058378D /* Category+CoreDataClass.swift in Sources */,
-				FEAFE6032300A0660058378D /* FilterViewController.swift in Sources */,
-				FEAFE5F623009EC10058378D /* Venue+CoreDataClass.swift in Sources */,
-				FEAFE5F823009EC10058378D /* Location+CoreDataClass.swift in Sources */,
-				FE0EF98522FF3B2700D0800D /* SceneDelegate.swift in Sources */,
-				FEAFE5F723009EC10058378D /* Venue+CoreDataProperties.swift in Sources */,
-				FEAFE5FD23009EC10058378D /* PriceInfo+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		FE0EF98822FF3B2700D0800D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE0EF98922FF3B2700D0800D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FE0EF99022FF3B2800D0800D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE0EF99122FF3B2800D0800D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FE0EF99422FF3B2800D0800D /* Debug */ = {
@@ -379,6 +273,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HL5737X75Y;
 				INFOPLIST_FILE = BubbleTeaFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,6 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HL5737X75Y;
 				INFOPLIST_FILE = BubbleTeaFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,19 +326,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		FE0EF98B22FF3B2700D0800D /* BubbleTeaFinder.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FE0EF98C22FF3B2700D0800D /* BubbleTeaFinder.xcdatamodel */,
-			);
-			currentVersion = FE0EF98C22FF3B2700D0800D /* BubbleTeaFinder.xcdatamodel */;
-			path = BubbleTeaFinder.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = FE0EF97722FF3B2700D0800D /* Project object */;
 }
