@@ -3,32 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 70;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		34EF7BE62E4CAFB300142D8D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EF7BE52E4CAFB300142D8D /* CoreDataStack.swift */; };
-		34EF7BE92E4CF1D400142D8D /* DogWalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34EF7BE72E4CF1D400142D8D /* DogWalk.xcdatamodeld */; };
-		FE0EF93022FDDF4C00D0800D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EF92F22FDDF4C00D0800D /* AppDelegate.swift */; };
-		FE0EF93222FDDF4C00D0800D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EF93122FDDF4C00D0800D /* SceneDelegate.swift */; };
-		FE0EF93422FDDF4C00D0800D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EF93322FDDF4C00D0800D /* ViewController.swift */; };
-		FE0EF93722FDDF4C00D0800D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0EF93522FDDF4C00D0800D /* Main.storyboard */; };
-		FE0EF93C22FDDF4D00D0800D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE0EF93B22FDDF4D00D0800D /* Assets.xcassets */; };
-		FE0EF93F22FDDF4D00D0800D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0EF93D22FDDF4D00D0800D /* LaunchScreen.storyboard */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		34EF7BE52E4CAFB300142D8D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		34EF7BE82E4CF1D400142D8D /* DogWalk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DogWalk.xcdatamodel; sourceTree = "<group>"; };
 		FE0EF92C22FDDF4C00D0800D /* DogWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE0EF92F22FDDF4C00D0800D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE0EF93122FDDF4C00D0800D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE0EF93322FDDF4C00D0800D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FE0EF93622FDDF4C00D0800D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FE0EF93B22FDDF4D00D0800D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FE0EF93E22FDDF4D00D0800D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FE0EF94022FDDF4D00D0800D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		34EF7C1E2E4D774900142D8D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FE0EF92B22FDDF4C00D0800D /* DogWalk */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		34EF7C132E4D774900142D8D /* DogWalk */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (34EF7C1E2E4D774900142D8D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DogWalk; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FE0EF92922FDDF4C00D0800D /* Frameworks */ = {
@@ -44,7 +38,7 @@
 		FE0EF92322FDDF4C00D0800D = {
 			isa = PBXGroup;
 			children = (
-				FE0EF92E22FDDF4C00D0800D /* DogWalk */,
+				34EF7C132E4D774900142D8D /* DogWalk */,
 				FE0EF92D22FDDF4C00D0800D /* Products */,
 			);
 			indentWidth = 2;
@@ -57,22 +51,6 @@
 				FE0EF92C22FDDF4C00D0800D /* DogWalk.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		FE0EF92E22FDDF4C00D0800D /* DogWalk */ = {
-			isa = PBXGroup;
-			children = (
-				FE0EF92F22FDDF4C00D0800D /* AppDelegate.swift */,
-				FE0EF93122FDDF4C00D0800D /* SceneDelegate.swift */,
-				FE0EF93322FDDF4C00D0800D /* ViewController.swift */,
-				34EF7BE72E4CF1D400142D8D /* DogWalk.xcdatamodeld */,
-				34EF7BE52E4CAFB300142D8D /* CoreDataStack.swift */,
-				FE0EF93522FDDF4C00D0800D /* Main.storyboard */,
-				FE0EF93B22FDDF4D00D0800D /* Assets.xcassets */,
-				FE0EF93D22FDDF4D00D0800D /* LaunchScreen.storyboard */,
-				FE0EF94022FDDF4D00D0800D /* Info.plist */,
-			);
-			path = DogWalk;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +68,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				34EF7C132E4D774900142D8D /* DogWalk */,
 			);
 			name = DogWalk;
 			productName = DogWalk;
@@ -134,9 +115,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE0EF93F22FDDF4D00D0800D /* LaunchScreen.storyboard in Resources */,
-				FE0EF93C22FDDF4D00D0800D /* Assets.xcassets in Resources */,
-				FE0EF93722FDDF4C00D0800D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,34 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE0EF93422FDDF4C00D0800D /* ViewController.swift in Sources */,
-				FE0EF93022FDDF4C00D0800D /* AppDelegate.swift in Sources */,
-				FE0EF93222FDDF4C00D0800D /* SceneDelegate.swift in Sources */,
-				34EF7BE62E4CAFB300142D8D /* CoreDataStack.swift in Sources */,
-				34EF7BE92E4CF1D400142D8D /* DogWalk.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		FE0EF93522FDDF4C00D0800D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE0EF93622FDDF4C00D0800D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FE0EF93D22FDDF4D00D0800D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE0EF93E22FDDF4D00D0800D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FE0EF94122FDDF4D00D0800D /* Debug */ = {
@@ -371,19 +325,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		34EF7BE72E4CF1D400142D8D /* DogWalk.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				34EF7BE82E4CF1D400142D8D /* DogWalk.xcdatamodel */,
-			);
-			currentVersion = 34EF7BE82E4CF1D400142D8D /* DogWalk.xcdatamodel */;
-			path = DogWalk.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = FE0EF92422FDDF4C00D0800D /* Project object */;
 }
