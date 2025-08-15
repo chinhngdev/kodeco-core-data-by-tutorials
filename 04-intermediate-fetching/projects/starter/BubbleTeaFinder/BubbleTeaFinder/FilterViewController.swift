@@ -33,6 +33,14 @@
 import UIKit
 import CoreData
 
+protocol FilterViewControllerDelegate: AnyObject {
+  func filterViewController(
+    filter: FilterViewController,
+    didSelectPredicate predicate: NSPredicate?,
+    sortDescriptor: NSSortDescriptor?
+  )
+}
+
 class FilterViewController: UITableViewController {
   @IBOutlet weak var firstPriceCategoryLabel: UILabel!
   @IBOutlet weak var secondPriceCategoryLabel: UILabel!
@@ -63,6 +71,9 @@ class FilterViewController: UITableViewController {
         #keyPath(Venue.priceInfo.priceCategory), "$"
       )
   }()
+  weak var delegate: FilterViewControllerDelegate?
+  var selectedSortDescriptor: NSSortDescriptor?
+  var selectedPredicate: NSPredicate?
   lazy var moderateVenuePredicate: NSPredicate = {
     return NSPredicate(
       format: "%K == %@",
@@ -75,6 +86,26 @@ class FilterViewController: UITableViewController {
       #keyPath(Venue.priceInfo.priceCategory), "$$$"
     )
   }()
+  lazy var offeringDealPredicate: NSPredicate = {
+    return NSPredicate(
+      format: "%K > 0",
+      #keyPath(Venue.specialCount)
+    )
+  }()
+
+  lazy var walkingDistancePredicate: NSPredicate = {
+    return NSPredicate(
+      format: "%K < 500",
+      #keyPath(Venue.location.distance)
+    )
+  }()
+  
+  lazy var hasUserTipsPredicate: NSPredicate = {
+    return NSPredicate(
+      format: "%K > 0",
+      #keyPath(Venue.stats.tipCount)
+    )
+  }()
 
   // MARK: - View Life Cycle
   override func viewDidLoad() {
@@ -82,20 +113,49 @@ class FilterViewController: UITableViewController {
     populateCheapVenueCountLabel()
     populateModerateVenueCountLabel()
     populateExpensiveVenueCountLabel()
+    populateDealsCountLabel()
   }
 }
 
 // MARK: - IBActions
 extension FilterViewController {
   @IBAction func search(_ sender: UIBarButtonItem) {
-    // Add code here
+    delegate?.filterViewController(
+      filter: self,
+      didSelectPredicate: selectedPredicate,
+      sortDescriptor: selectedSortDescriptor
+    )
+    
+    dismiss(animated: true)
   }
 }
 
 // MARK: - UITableViewDelegate
 extension FilterViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // Add code here
+    guard let cell = tableView.cellForRow(at: indexPath) else {
+      return
+    }
+    
+    switch cell {
+      // Price section
+    case cheapVenueCell:
+      selectedPredicate = cheapVenuePredicate
+    case moderateVenueCell:
+      selectedPredicate = moderateVenuePredicate
+    case expensiveVenueCell:
+      selectedPredicate = expensiveVenuePredicate
+      // Most Popular section
+    case offeringDealCell:
+      selectedPredicate = offeringDealPredicate
+    case walkingDistanceCell:
+      selectedPredicate = walkingDistancePredicate
+    case userTipsCell:
+      selectedPredicate = hasUserTipsPredicate
+    default: break
+    }
+    
+    cell.accessoryType = .checkmark
   }
 }
 
@@ -151,6 +211,38 @@ extension FilterViewController {
       let pluralized = count == 1 ? "place" : "places"
       thirdPriceCategoryLabel.text =
       "\(count) bubble tea \(pluralized)"
+    } catch let error as NSError {
+      print("count not fetched \(error), \(error.userInfo)")
+    }
+  }
+  
+  func populateDealsCountLabel() {
+    // 1
+    let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Venue")
+    fetchRequest.resultType = .dictionaryResultType
+    
+    // 2
+    let sumExpressionDesc = NSExpressionDescription()
+    sumExpressionDesc.name = "sumDeals"
+    
+    // 3
+    let specialCountExp = NSExpression(forKeyPath: #keyPath(Venue.specialCount))
+    sumExpressionDesc.expression = NSExpression(forFunction: "sum:", arguments: [specialCountExp])
+    sumExpressionDesc.expressionResultType = .integer32AttributeType
+    
+    // 4
+    fetchRequest.propertiesToFetch = [sumExpressionDesc]
+    
+    // 5
+    do {
+      let results =
+      try coreDataStack.managedContext.fetch(fetchRequest)
+      
+      let resultDict = results.first
+      let numDeals = resultDict?["sumDeals"] as? Int ?? 0
+      let pluralized = numDeals == 1 ? "deal" : "deals"
+      numDealsLabel.text = "\(numDeals) \(pluralized)"
+      
     } catch let error as NSError {
       print("count not fetched \(error), \(error.userInfo)")
     }
