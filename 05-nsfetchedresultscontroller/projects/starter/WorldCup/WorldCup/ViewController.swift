@@ -40,17 +40,18 @@ class ViewController: UIViewController {
   lazy var fetchedResultsController: NSFetchedResultsController<Team> = {
     // 1
     let fetchRequest: NSFetchRequest<Team> = Team.fetchRequest()
-    let sort = NSSortDescriptor(
-      key: #keyPath(Team.teamName),
-      ascending: true
-    )
-    fetchRequest.sortDescriptors = [sort]
+    
+    let zoneSort = NSSortDescriptor(key: #keyPath(Team.qualifyingZone), ascending: true)
+    let scoreSort = NSSortDescriptor(key: #keyPath(Team.wins), ascending: false)
+    let nameSort = NSSortDescriptor(key: #keyPath(Team.teamName), ascending: true)
+    
+    fetchRequest.sortDescriptors = [zoneSort, scoreSort, nameSort]
     
     // 2
     let fetchedResultsController = NSFetchedResultsController(
       fetchRequest: fetchRequest,
       managedObjectContext: coreDataStack.managedContext,
-      sectionNameKeyPath: nil,
+      sectionNameKeyPath: #keyPath(Team.qualifyingZone),
       cacheName: nil
     )
     
@@ -113,11 +114,20 @@ extension ViewController: UITableViewDataSource {
     configure(cell: cell, for: indexPath)
     return cell
   }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    let sectionInfo = fetchedResultsController.sections?[section]
+    return sectionInfo?.name
+  }
 }
 
 // MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let team = fetchedResultsController.object(at: indexPath)
+    team.wins += 1
+    coreDataStack.saveContext()
+    tableView.reloadData()
   }
 }
 
