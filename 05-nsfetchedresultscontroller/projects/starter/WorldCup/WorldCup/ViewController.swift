@@ -33,8 +33,9 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
   // MARK: - Properties
+  var dataSource: UITableViewDiffableDataSource<String, NSManagedObjectID>?
   private let teamCellIdentifier = "teamCellReuseIdentifier"
   lazy var  coreDataStack = CoreDataStack(modelName: "WorldCup")
   lazy var fetchedResultsController: NSFetchedResultsController<Team> = {
@@ -68,11 +69,17 @@ class ViewController: UIViewController {
     super.viewDidLoad()
 
     importJSONSeedDataIfNeeded()
-    
-    do {
-      try fetchedResultsController.performFetch()
-    } catch let error as NSError {
-      print("Fetching error: \(error), \(error.userInfo)")
+    dataSource = setupDataSource()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    UIView.performWithoutAnimation {
+      do {
+        try fetchedResultsController.performFetch()
+      } catch let error as NSError {
+        print("Fetching error: \(error), \(error.userInfo)")
+      }
     }
   }
   
@@ -131,12 +138,12 @@ extension ViewController {
 
 // MARK: - Internal
 extension ViewController {
-  func configure(cell: UITableViewCell, for indexPath: IndexPath) {
+  func configure(cell: UITableViewCell, for team: Team) {
+    
     guard let cell = cell as? TeamCell else {
       return
     }
     
-    let team = fetchedResultsController.object(at: indexPath)
     cell.teamLabel.text = team.teamName
     cell.scoreLabel.text = "Wins: \(team.wins)"
     
@@ -146,31 +153,22 @@ extension ViewController {
       cell.flagImageView.image = nil
     }
   }
-}
-
-// MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return fetchedResultsController.sections?.count ?? 0
-  }
-
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    guard let sectionInfo = fetchedResultsController.sections?[section] else {
-      return 0
-    }
-    
-    return sectionInfo.numberOfObjects
-  }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: teamCellIdentifier, for: indexPath)
-    configure(cell: cell, for: indexPath)
-    return cell
-  }
   
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    let sectionInfo = fetchedResultsController.sections?[section]
-    return sectionInfo?.name
+  func setupDataSource() -> UITableViewDiffableDataSource<String, NSManagedObjectID> {
+    UITableViewDiffableDataSource(
+      tableView: tableView
+    ) { [unowned self] (tableView, indexPath, managedObjectID) -> UITableViewCell? in
+      
+      let cell = tableView.dequeueReusableCell(
+        withIdentifier: self.teamCellIdentifier,
+        for: indexPath
+      )
+      
+      if let team = try? coreDataStack.managedContext.existingObject(with: managedObjectID) as? Team {
+        self.configure(cell: cell, for: team)
+      }
+      return cell
+    }
   }
 }
 
@@ -179,7 +177,31 @@ extension ViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let team = fetchedResultsController.object(at: indexPath)
     team.wins += 1
+    if var snapshot = dataSource?.snapshot() {
+      snapshot.reloadItems([team.objectID])
+      dataSource?.apply(snapshot, animatingDifferences: false)
+    }
     coreDataStack.saveContext()
+  }
+  
+  func tableView(
+    _ tableView: UITableView,
+    viewForHeaderInSection section: Int
+  ) -> UIView? {
+    let sectionInfo = fetchedResultsController.sections?[section]
+    
+    let titleLabel = UILabel()
+    titleLabel.backgroundColor = .white
+    titleLabel.text = sectionInfo?.name
+    
+    return titleLabel
+  }
+  
+  func tableView(
+    _ tableView: UITableView,
+    heightForHeaderInSection section: Int
+  ) -> CGFloat {
+    20
   }
 }
 
@@ -230,54 +252,11 @@ extension ViewController {
 
 // MARK: - NSFetchedResultsControllerDelegate
 extension ViewController: NSFetchedResultsControllerDelegate {
-  func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-    tableView.beginUpdates()
-  }
-  
-  func controller(
-    _ controller:
-    NSFetchedResultsController<NSFetchRequestResult>,
-    didChange anObject: Any,
-    at indexPath: IndexPath?,
-    for type: NSFetchedResultsChangeType,
-    newIndexPath: IndexPath?
-  ) {
-    
-    switch type {
-    case .insert:
-      tableView.insertRows(at: [newIndexPath!], with: .automatic)
-    case .delete:
-      tableView.deleteRows(at: [indexPath!], with: .automatic)
-    case .update:
-      let cell = tableView.cellForRow(at: indexPath!) as! TeamCell
-      configure(cell: cell, for: indexPath!)
-    case .move:
-      tableView.deleteRows(at: [indexPath!], with: .automatic)
-      tableView.insertRows(at: [newIndexPath!], with: .automatic)
-    @unknown default:
-      print("Unexpected NSFetchedResultsChangeType")
-    }
-  }
-  
-  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-    tableView.endUpdates()
-  }
-  
   func controller(
     _ controller: NSFetchedResultsController<NSFetchRequestResult>,
-    didChange sectionInfo: NSFetchedResultsSectionInfo,
-    atSectionIndex sectionIndex: Int,
-    for type: NSFetchedResultsChangeType
+    didChangeContentWith snapshot: NSDiffableDataSourceSnapshotReference
   ) {
-    
-    let indexSet = IndexSet(integer: sectionIndex)
-    
-    switch type {
-    case .insert:
-      tableView.insertSections(indexSet, with: .automatic)
-    case .delete:
-      tableView.deleteSections(indexSet, with: .automatic)
-    default: break
-    }
+    let snapshot = snapshot as NSDiffableDataSourceSnapshot<String, NSManagedObjectID>
+    dataSource?.apply(snapshot)
   }
 }
